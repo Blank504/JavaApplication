@@ -3,6 +3,8 @@ import javax.swing.*;
 public class JavaApp {
     public static void main (String[] args){
 
+        String s1[] = { "cat","dog","elephant","lion","gorrila","meow" };
+
         JFrame frame = new JFrame("Example Java App");
         ImageIcon appicon = new ImageIcon("C:/Users/Admin/Downloads/Ote4UrfQ.jpg");
         JLabel lbl = new JLabel("Name:");
@@ -18,7 +20,8 @@ public class JavaApp {
          JRadioButton rb = new JRadioButton("meow");
         JButton btn = new JButton("Submit");
         JTextArea ta = new JTextArea("This is khai");
-
+        JComboBox c = new JComboBox<>(s1);
+         GridLayout layout = new GridLayout(0,3);
 
         lbl.setBounds(5,10,50,30);
         tf.setBounds(100,10,100,30);
@@ -32,8 +35,8 @@ public class JavaApp {
         cb2.setBounds(200, 170, 100, 30);
         rb.setBounds(300, 170, 100, 30);
         btn.setBounds(5,210,75,30);
-        ta.setBounds(5,250,500,100);
-
+        ta.setBounds(5,250,500,30);
+        c.setBounds(5, 290, 100, 30);
 
         frame.add(lbl);
         frame.add(tf);
@@ -48,6 +51,9 @@ public class JavaApp {
         frame.add(rb);
         frame.add(btn);
         frame.add(ta);
+         frame.add(c);
+         layout.setHgap(10);
+      layout.setVgap(10);
 
         frame.setIconImage(appicon.getImage());
        frame.setLayout(null);
