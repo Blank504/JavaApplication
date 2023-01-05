@@ -1,58 +1,46 @@
-import javax.swing.*;
-
-public class SwingLayoutDemo {
-   private JFrame mainFrame;
-   private JLabel headerLabel;
-   private JLabel statusLabel;
-   private JPanel controlPanel;
-   private JLabel msglabel;
-   
-   public SwingLayoutDemo(){
-      prepareGUI();
-   }
-   public static void main(String[] args){
-      SwingLayoutDemo swingLayoutDemo = new SwingLayoutDemo();  
-      swingLayoutDemo.showGridLayoutDemo();       
-   }
-   private void prepareGUI(){
-      mainFrame = new JFrame("Java SWING Examples");
-      mainFrame.setSize(400,400);
-      mainFrame.setLayout(new GridLayout(3, 1));
-
-      headerLabel = new JLabel("",JLabel.CENTER );
-      statusLabel = new JLabel("",JLabel.CENTER);        
-      statusLabel.setSize(350,100);
-      
-      mainFrame.addWindowListener(new WindowAdapter() {
-         public void windowClosing(WindowEvent windowEvent){
-            System.exit(0);
-         }        
-      });    
-      controlPanel = new JPanel();
-      controlPanel.setLayout(new FlowLayout());
-
-      mainFrame.add(headerLabel);
-      mainFrame.add(controlPanel);
-      mainFrame.add(statusLabel);
-      mainFrame.setVisible(true);  
-   }
-   private void showGridLayoutDemo(){
-      headerLabel.setText("Layout in action: GridLayout");      
-      
-      JPanel panel = new JPanel();
-      panel.setBackground(Color.darkGray);
-      panel.setSize(300,300);
-      GridLayout layout = new GridLayout(0,3);
-      layout.setHgap(10);
-      layout.setVgap(10);
-      
-      panel.setLayout(layout);        
-      panel.add(new JButton("Button 1"));
-      panel.add(new JButton("Button 2")); 
-      panel.add(new JButton("Button 3")); 
-      panel.add(new JButton("Button 4")); 
-      panel.add(new JButton("Button 5")); 
-      controlPanel.add(panel);
-      mainFrame.setVisible(true);  
-   }
-}
+// import statements  
+import java.awt.*;    
+import javax.swing.*;    
+    
+public class test  
+{    
+JFrame frameObj;    
+  
+// constructor  
+test()  
+{    
+frameObj = new JFrame();    
+  
+// creating 9 buttons  
+JButton btn1 = new JButton("1");    
+JButton btn2 = new JButton("2");    
+JButton btn3 = new JButton("3");    
+JButton btn4 = new JButton("4");    
+JButton btn5 = new JButton("5");    
+JButton btn6 = new JButton("6");    
+JButton btn7 = new JButton("7");    
+JButton btn8 = new JButton("8");    
+JButton btn9 = new JButton("9");    
+    
+// adding buttons to the frame  
+// since, we are using the parameterless constructor, therfore;   
+// the number of columns is equal to the number of buttons we   
+// are adding to the frame. The row count remains one.  
+frameObj.add(btn1); frameObj.add(btn2); frameObj.add(btn3);  
+frameObj.add(btn4); frameObj.add(btn5); frameObj.add(btn6);  
+frameObj.add(btn7); frameObj.add(btn8); frameObj.add(btn9);    
+  
+// setting the grid layout using the parameterless constructor    
+frameObj.setLayout(new GridLayout());    
+  
+  
+frameObj.setSize(300, 300);    
+frameObj.setVisible(true);    
+}  
+  
+// main method  
+public static void main(String argvs[])   
+{    
+new test();    
+}    
+}    

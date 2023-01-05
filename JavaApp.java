@@ -1,9 +1,17 @@
+import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
+
+
+
 
 public class JavaApp {
     public static void main (String[] args){
 
         String s1[] = { "cat","dog","elephant","lion","gorrila","meow" };
+        String week[]= { "Monday","Tuesday","Wednesday",
+                         "Thursday","Friday","Saturday","Sunday"};
+         
 
         JFrame frame = new JFrame("Example Java App");
         ImageIcon appicon = new ImageIcon("C:/Users/Admin/Downloads/Ote4UrfQ.jpg");
@@ -21,7 +29,13 @@ public class JavaApp {
         JButton btn = new JButton("Submit");
         JTextArea ta = new JTextArea("This is khai");
         JComboBox c = new JComboBox<>(s1);
-         GridLayout layout = new GridLayout(0,3);
+        JList l = new JList<>(week);
+        JMenuBar mb = new JMenuBar();
+        JMenu m = new JMenu("Menu");
+        JMenuItem mi1 =new JMenuItem("First");
+         JMenuItem mi2 =new JMenuItem("Second "); 
+         JMenuItem mi3 =new JMenuItem("Third");
+        
 
         lbl.setBounds(5,10,50,30);
         tf.setBounds(100,10,100,30);
@@ -37,7 +51,8 @@ public class JavaApp {
         btn.setBounds(5,210,75,30);
         ta.setBounds(5,250,500,30);
         c.setBounds(5, 290, 100, 30);
-
+        l.setBounds(5, 320, 100, 130);
+        
         frame.add(lbl);
         frame.add(tf);
         frame.add(lbl2);
@@ -52,9 +67,13 @@ public class JavaApp {
         frame.add(btn);
         frame.add(ta);
          frame.add(c);
-         layout.setHgap(10);
-      layout.setVgap(10);
-
+         frame.add(l);
+         m.add(mi1);
+         m.add(mi2);
+         m.add(mi3);
+         mb.add(m);
+   
+         frame.setJMenuBar(mb);
         frame.setIconImage(appicon.getImage());
        frame.setLayout(null);
        frame.setSize(900,900);
